@@ -6,10 +6,12 @@ public class Main {
 	    // Hello World
         System.out.println("Hello World!");
 
-        Calculator calculator = new Calculator();
+        Calculator adderCalculator = new Calculator(new Adder());
+        Calculator subtractorCalculator = new Calculator(new Subtractor());
+        Calculator multiplierCalculator = new Calculator(new Multiplier());
 
-        System.out.println("Adding 5 + 6 = "+ calculator.toString(calculator.add(5, 6)));
-        System.out.println("Subtracting 10 - 2 = "+ calculator.toString(calculator.subtract(10, 2)));
-        System.out.println("Multiplying 20 * 6 = "+ calculator.toString(calculator.multiply(20, 6)));
+        System.out.println("Adding 5 + 6 = "+ adderCalculator.executeCalculation(5, 6));
+        System.out.println("Subtracting 10 - 2 = "+ subtractorCalculator.executeCalculation(10, 2));
+        System.out.println("Multiplying 20 * 6 = "+ multiplierCalculator.executeCalculation(20, 6));
     }
 }

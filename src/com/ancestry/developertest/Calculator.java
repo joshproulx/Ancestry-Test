@@ -1,17 +1,15 @@
 package com.ancestry.developertest;
 
-public class Calculator extends CalculatorAbstract implements AdderInterface, SubtractorInterface, MultiplierInterface {
+public class Calculator {
 
-    public int add(int numberA, int numberB) {
-        return numberA + numberB;
+    private Calculation calculation;
+
+    public Calculator(Calculation calculation) {
+        this.calculation = calculation;
     }
 
-    public int subtract(int numberA, int numberB) {
-        return numberA - numberB;
-    }
-
-    public int multiply(int numberA, int numberB) {
-        return numberA * numberB;
+    public int executeCalculation(int numberA, int numberB) {
+        return this.calculation.calculation(numberA, numberB);
     }
 
 }
